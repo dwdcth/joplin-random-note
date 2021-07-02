@@ -4,6 +4,7 @@ import {
   ToolbarButtonLocation,
   SettingItemType,
 } from 'api/types';
+Math.random = function(seed){return ('0.'+Math.sin(seed).toString().substr(6));}
 
 joplin.plugins.register({
   onStart: async function () {
@@ -62,7 +63,8 @@ joplin.plugins.register({
           });
 
           // calculating a random note id
-          const randomNoteId = Math.floor(Math.random() * filteredNotes.length);
+          
+          const randomNoteId = Math.floor(Math.random(new Date().getTime()) * filteredNotes.length);
 
           await joplin.commands.execute(
             'openNote',
