@@ -4,7 +4,7 @@ import {
   ToolbarButtonLocation,
   SettingItemType,
 } from 'api/types';
-myrandom = function(seed :number){return parseFloat('0.'+Math.sin(seed).toString().substr(6));}
+ function myrandom(seed :number){return parseFloat('0.'+Math.sin(seed).toString().substr(6));}
 
 joplin.plugins.register({
   onStart: async function () {
